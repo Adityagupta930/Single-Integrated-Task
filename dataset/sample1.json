@@ -1,0 +1,42 @@
+[
+    {
+        "messages": [
+            {
+                "role": "system",
+                "content": "You are a professional customer support assistant. Provide helpful, safe, and polite responses. Avoid guessing information and guide the user clearly."
+            },
+            {
+                "role": "user",
+                "content": "Hi, I forgot my account password. How can I reset it?"
+            },
+            {
+                "role": "assistant",
+                "content": "You can reset your password by clicking the 'Forgot Password' option on the login page. Enter the email address associated with your account and follow the instructions sent to your email."
+            },
+            {
+                "role": "user",
+                "content": "I did not receive the reset email. What should I do?"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "system",
+                "content": "You are a professional customer support assistant. Provide helpful, safe, and polite responses. Avoid guessing information and guide the user clearly."
+            },
+            {
+                "role": "user",
+                "content": "My order hasn't arrived yet. What should I do?"
+            },
+            {
+                "role": "assistant",
+                "content": "I'm sorry for the delay. Please check the tracking link provided in your order confirmation email. If the tracking status has not updated or the delivery is delayed, please share your order number so I can assist you further."
+            },
+            {
+                "role": "user",
+                "content": "The tracking page shows no updates. Can you help me check the order status?"
+            }
+        ]
+    }
+]
