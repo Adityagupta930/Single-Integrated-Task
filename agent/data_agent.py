@@ -10,7 +10,6 @@ class DataQueryAgent:
     ]
 
     def run(self, prompt: str, context: dict, guardrails: list) -> AgentResult:
-        # Step 1 — ask clarifying questions to avoid unsafe or incorrect queries
         clarifying_questions = [
             "Which database or data source are you referring to?",
             "What specific table or dataset should be queried?",
@@ -18,7 +17,6 @@ class DataQueryAgent:
             "Should the results be aggregated (count, sum, average) or raw rows?",
         ]
 
-        # Step 2 — propose a query plan (no execution, safe by design)
         query_plan = [
             "STEP 1: Identify the target table based on your clarification",
             "STEP 2: Define SELECT columns (avoid SELECT * in production)",

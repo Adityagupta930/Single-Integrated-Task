@@ -1,8 +1,3 @@
-"""
-Simulated database for agent instructions and guardrails.
-In production, replace this with real DB calls (e.g., SQLAlchemy / DynamoDB).
-"""
-
 AGENT_DB: dict = {
     "general": {
         "instruction": (
@@ -51,5 +46,4 @@ AGENT_DB: dict = {
 
 
 def get_agent_config(intent: str) -> dict:
-    """Return instruction and guardrails for the given intent from the DB."""
     return AGENT_DB.get(intent, AGENT_DB["general"])

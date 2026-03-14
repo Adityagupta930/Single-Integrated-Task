@@ -9,7 +9,6 @@ class IntegrationAgent:
         "Guide setup for Jira, Slack, Gmail, and Webhooks",
     ]
 
-    # Required config fields per integration type
     INTEGRATION_CONFIGS = {
         "Jira": {
             "base_url": "<your-jira-domain>.atlassian.net",
@@ -37,8 +36,6 @@ class IntegrationAgent:
 
     def run(self, prompt: str, context: dict, guardrails: list) -> AgentResult:
         prompt_lower = prompt.lower()
-
-        # Select integrations relevant to the prompt; default to all if none matched
         selected = [name for name in self.INTEGRATION_CONFIGS if name.lower() in prompt_lower]
         if not selected:
             selected = list(self.INTEGRATION_CONFIGS.keys())

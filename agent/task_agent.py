@@ -10,7 +10,6 @@ class TaskPlannerAgent:
     ]
 
     def run(self, prompt: str, context: dict, guardrails: list) -> AgentResult:
-        # Build a dynamic plan based on the user's prompt
         steps = [
             f"1. Understand the goal: '{prompt}'",
             "2. Identify required resources and dependencies",

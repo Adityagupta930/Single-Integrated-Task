@@ -10,7 +10,6 @@ class GeneralQAAgent:
     ]
 
     def run(self, prompt: str, context: dict, guardrails: list) -> AgentResult:
-        # Guardrail check: skip any flagged keywords passed from the router layer
         for rule in guardrails:
             if rule.get("type") == "block_keyword" and rule["value"].lower() in prompt.lower():
                 return AgentResult(

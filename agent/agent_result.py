@@ -1,6 +1,4 @@
 class AgentResult:
-    """Standardized return object for all agents."""
-
     def __init__(self, response: str, actions: list = None, config: dict = None, trace: dict = None):
         self.response = response
         self.actions = actions or []
