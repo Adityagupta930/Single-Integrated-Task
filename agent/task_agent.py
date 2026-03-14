@@ -1,25 +1,26 @@
-from agent_result import Agent_result
+from agent.agent_result import AgentResult
 
 
-
-class taskAgent:
-    name = "Task planner agent"      # Agent Name
-    capability = [        # AGENT SYSTEM  prompt 
-        "create a structured plan",
-        "break task into step"
+class TaskPlannerAgent:
+    name = "TaskPlannerAgent"
+    capabilities = [
+        "Break a goal into structured action steps",
+        "Produce prioritized task plans",
+        "Identify dependencies between steps",
     ]
 
-    
-
-    def run(self, prompt, context,guardrails):
-
-        steps=[
-            "understand the task "
-            "identify the required task "
-            "execute the step",
-            "validate the resukt"
+    def run(self, prompt: str, context: dict, guardrails: list) -> AgentResult:
+        # Build a dynamic plan based on the user's prompt
+        steps = [
+            f"1. Understand the goal: '{prompt}'",
+            "2. Identify required resources and dependencies",
+            "3. Break the goal into smaller, actionable sub-tasks",
+            "4. Assign priority and estimated effort to each sub-task",
+            "5. Execute sub-tasks in order and validate each result",
+            "6. Review the final outcome against the original goal",
         ]
-        return Agent_result(response="here is a structured task plan",
-                            actions= steps
-                            
-                            )
+        return AgentResult(
+            response="Here is your structured action plan:",
+            actions=steps,
+            trace={"agent": self.name, "intent": "task_planning", "steps_count": len(steps)},
+        )
